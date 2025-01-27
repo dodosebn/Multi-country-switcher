@@ -1,11 +1,12 @@
-import React, { useState } from "react";
+"use client";
+
+import React from "react";
 import { RegionProps } from "@/types"; 
 import { InputaProps } from "@/types";
 
-const Inputa: React.FC<InputaProps> = ({ txtVal, setTxtVal }) => {
-  const regions: RegionProps = ["Africa", "America", "Asia", "Europe", "Oceania"];
-  const [region, setRegion] = useState('');
-  
+const Inputa: React.FC<InputaProps> = ({ txtVal, setTxtVal, region, setRegion }) => {
+  const regions: RegionProps = ["Africa", "Americas", "Asia", "Europe", "Oceania"];
+
   return (
     <div>
       <form>
@@ -16,7 +17,7 @@ const Inputa: React.FC<InputaProps> = ({ txtVal, setTxtVal }) => {
           onChange={(e) => setTxtVal(e.target.value)}
           placeholder="Search for a country..."
         />
-        <select name="fil" onChange={(e) => setRegion(e.target.value)}>
+        <select name="fil" value={region} onChange={(e) => setRegion(e.target.value)}>
           <option value="">All Regions</option>
           {regions.map((region, key) => (
             <option value={region} key={key}>{region}</option>
@@ -26,6 +27,5 @@ const Inputa: React.FC<InputaProps> = ({ txtVal, setTxtVal }) => {
     </div>
   );
 };
-
 
 export default Inputa;

@@ -27,11 +27,39 @@ export interface ForAllProps {
     flag: string;
 
 }
+export interface mainPP {
+    countryData: ForAllProps | null;
 
+}
 export interface MainProps {
     countryData: ForAllProps | null;
     setCountryData: React.Dispatch<React.SetStateAction<ForAllProps | null>>;
     jsonData: ForAllProps[];
     txtVal: string;
 }
+
+export interface HomePageProps{
+    // countryData: ForAllProps | null;
+    setCountryData: React.Dispatch<React.SetStateAction<ForAllProps | null>>;
+    jsonData: ForAllProps[];
+    txtVal: string;
+    region: string;
+    setRegion: React.Dispatch<React.SetStateAction<string>>;
+  setTxtVal: React.Dispatch<React.SetStateAction<string>>;
+  countryData: ForAllProps | null;
+
+}
+export interface FirstPageProps {
+    jsonData: ForAllProps[];
+    // countryData: ForAllProps | null;
+    // idCountry:string;
+    setCountryData: React.Dispatch<React.SetStateAction<ForAllProps | null>>;
+}
+export interface InputaProps {
+  txtVal: string;
+  setTxtVal: React.Dispatch<React.SetStateAction<string>>;
+  region: string;
+  setRegion: React.Dispatch<React.SetStateAction<string>>;
+}
+export type RegionProps = string[];
 
