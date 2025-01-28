@@ -1,0 +1,62 @@
+$main-font: 'Nunito Sans', sans-serif;
+$DarkBg: hsl(207, 26%, 17%);
+$LightBg: hsl(0, 0%, 98%);
+$DarkBl: hsl(209, 23%, 22%);
+$White: hsl(0, 0%, 100%);
+
+html {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: $main-font;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Define body styles for dark and light modes using CSS variables
+body.darkMode {
+  --bg-color: $DarkBg;
+  --text-color: $White;
+}
+
+body.whiteMode {
+  --bg-color: $LightBg;
+  --text-color: $DarkBl;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.bodyStuff {
+  background-size: cover;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+.bodyWrap {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  @extend .bodyStuff;
+}
+
+.constTop {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  @extend .bodyStuff;
+}
+
+.constRule1 {
+  padding: 1.3rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.bodyRule1 {
+  padding: 2rem;
+}

@@ -63,3 +63,7 @@ export interface InputaProps {
 }
 export type RegionProps = string[];
 
+export interface ConstTopProps {
+    darkMode: boolean;
+    setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
+  }

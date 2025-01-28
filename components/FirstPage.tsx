@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from "next/navigation";
 import { FirstPageProps } from '@/types';
-
+import firstStyle from '../styles/FirstPage.module.scss'
 const FirstPage: React.FC<FirstPageProps> = ({ setCountryData, jsonData }) => {
   const router = useRouter();
 

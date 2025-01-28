@@ -3,7 +3,6 @@
 import React from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-// import Image from 'next/image';
 
 const Main: React.FC = () => {
   const searchParams = useSearchParams();
