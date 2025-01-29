@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from "react";
 import { ForAllProps } from "@/types";
-// Pass the Country type to the initialData array
 
 const useVirtualization = (initialData: ForAllProps[] = []) => {
   const ITEMS_PER_PAGE = 20;
