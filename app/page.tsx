@@ -2,8 +2,9 @@
 import { HomePage, ConstTop } from "@/components";
 import Data from "@/data.json";
 import { ForAllProps } from "@/types";
-import { useState} from "react";
+import { useState } from "react";
 import MainStyle from "../styles/MainPage.module.scss";
+import "../styles/global.scss"; 
 const jsonData: ForAllProps[] = Data as ForAllProps[];
 
 export default function Home() {
@@ -20,22 +21,25 @@ export default function Home() {
 
   return (
     <>
-    <div
-      className={MainStyle.bodyWrap}
-      style={{ backgroundColor: "var(--bg-color)", color: "var(--text-color)" }}
-    >
-      <div>
-        <HomePage
-          txtVal={txtVal}
-          setTxtVal={setTxtVal}
-          setCountryData={setCountryData}
-          jsonData={filteredData}
-          region={region}
-          setRegion={setRegion}
-          countryData={countryData}
-        />
+      <div
+        className={MainStyle.bodyWrap}
+        style={{
+          backgroundColor: "var(--bg-color)",
+          color: "var(--text-color)",
+        }}
+      >
+        <div>
+          <HomePage
+            txtVal={txtVal}
+            setTxtVal={setTxtVal}
+            setCountryData={setCountryData}
+            jsonData={filteredData}
+            region={region}
+            setRegion={setRegion}
+            countryData={countryData}
+          />
+        </div>
       </div>
-    </div>
     </>
   );
 }

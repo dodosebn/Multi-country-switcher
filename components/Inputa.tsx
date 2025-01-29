@@ -3,6 +3,7 @@ import { RegionProps } from "@/types";
 import { InputaProps } from "@/types";
 import inputStyle from "../styles/MainPage.module.scss";
 import inputTexta from "../styles/inputa.module.scss";
+import "../styles/global.scss"; 
 import { CiSearch } from "react-icons/ci";
 
 const Inputa: React.FC<InputaProps> = ({

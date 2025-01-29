@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { FaMoon } from "react-icons/fa";
 import { CiLight } from "react-icons/ci";
 import MainStyle from "../styles/MainPage.module.scss";
+import "../styles/global.scss"; 
 import { ConstTopProps } from "@/types";
 
 const ConstTop: React.FC<ConstTopProps> = ({ darkMode, setDarkMode }) => {

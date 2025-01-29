@@ -4,6 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { FirstPageProps, ForAllProps } from "@/types";
 import MainStyle from '../styles/MainPage.module.scss';
+import "../styles/global.scss"; 
 // import FirstStyle from '../styles/FirstPage.module.scss';
 import { useVirtualization } from "@/components/Hooks";
 import { Loader2 } from "lucide-react";
