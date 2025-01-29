@@ -3,9 +3,9 @@
 import React from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import FirstStyle from '@/styles/FirstPage.module.scss';
+import FirstStyle from '../../styles/FirstPage.module.scss';
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { time } from 'console';
+// import { time } from 'console';
 
 const Main: React.FC = () => {
 

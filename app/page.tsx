@@ -3,7 +3,7 @@ import { HomePage, ConstTop } from "@/components";
 import Data from "@/data.json";
 import { ForAllProps } from "@/types";
 import { useState} from "react";
-import MainStyle from "@/styles/MainPage.module.scss";
+import MainStyle from "../styles/MainPage.module.scss";
 const jsonData: ForAllProps[] = Data as ForAllProps[];
 
 export default function Home() {

@@ -63,24 +63,24 @@ $LightBg: hsl(0, 0%, 98%);
   }
 }
 // for firstPage.tsx scrictly
-.LoadingCont {
-  width: 100%;
-//   padding: 0 0 12 12;
-  .Loader2 {
-    width: 4rem;
-    height: 4rem;
-    color: #d3d3d3;
-  }
-  p {
-    color: #d3d3d3;
-    font-size: medium;
-  }
-}
-.p2 {
-  color: #d3d3d3;
-  text-shadow: 2px 2px 2px 2px solid red;
-  font-size: medium;
-}
+// .LoadingCont {
+//   width: 100%;
+//   //   padding: 0 0 12 12;
+//   .Loader2 {
+//     width: 4rem;
+//     height: 4rem;
+//     color: #d3d3d3;
+//   }
+//   p {
+//     color: #d3d3d3;
+//     font-size: medium;
+//   }
+// }
+// .p2 {
+//   color: #d3d3d3;
+//   text-shadow: 2px 2px 2px 2px solid red;
+//   font-size: medium;
+// }
 // the styles for firstpge.tsx ends here
 @media (min-width: 1200px) {
   .buttonBoss {

@@ -4,7 +4,7 @@ import React from "react";
 import { useRouter } from "next/navigation";
 import { FirstPageProps, ForAllProps } from "@/types";
 import MainStyle from '../styles/MainPage.module.scss';
-import FirstStyle from '../styles/FirstPage.module.scss';
+// import FirstStyle from '../styles/FirstPage.module.scss';
 import { useVirtualization } from "@/components/Hooks";
 import { Loader2 } from "lucide-react";
 // import { CountryProps } from "@/types";
@@ -60,15 +60,15 @@ const FirstPage: React.FC<FirstPageProps> = ({ setCountryData, jsonData }) => {
           </div>
         </div>
       ))}
-      <div ref={loadingRef} className={FirstStyle.LoadingCont}>
+      <div ref={loadingRef}>
         {loading && (
           <div>
-            <Loader2 className={FirstStyle.Loader2} />
+            <Loader2 />
             <p>Loading more Country....</p>
           </div>
         )}
         {!hasMore && items.length > 0 && (
-          <p className={FirstStyle.p2}>You've reached the end of the list</p>
+          <p>You've reached the end of the list</p>
         )}
       </div>
     </div>

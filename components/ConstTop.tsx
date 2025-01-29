@@ -2,7 +2,7 @@
 import React, { useEffect } from "react";
 import { FaMoon } from "react-icons/fa";
 import { CiLight } from "react-icons/ci";
-import MainStyle from "@/styles/MainPage.module.scss";
+import MainStyle from "../styles/MainPage.module.scss";
 import { ConstTopProps } from "@/types";
 
 const ConstTop: React.FC<ConstTopProps> = ({ darkMode, setDarkMode }) => {
@@ -25,11 +25,19 @@ const ConstTop: React.FC<ConstTopProps> = ({ darkMode, setDarkMode }) => {
         <div>
           <h3>Where in the World?</h3>
         </div>
-        <div >
+        <div>
           {darkMode ? (
-            <CiLight fontSize={30} onClick={() => setDarkMode(false)} className={MainStyle.constMode}/>
+            <CiLight
+              fontSize={30}
+              onClick={() => setDarkMode(false)}
+              className={MainStyle.constMode}
+            />
           ) : (
-            <FaMoon fontSize={30} onClick={() => setDarkMode(true)} className={MainStyle.constMode}/>
+            <FaMoon
+              fontSize={30}
+              onClick={() => setDarkMode(true)}
+              className={MainStyle.constMode}
+            />
           )}
         </div>
       </div>

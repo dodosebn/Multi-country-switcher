@@ -22,7 +22,7 @@ const useVirtualization = (initialData: ForAllProps[] = []) => {
     if (loading || !hasMore) return;
     setLoading(true);
     try {
-      await new Promise(resolve => setTimeout(resolve, 500));
+      await new Promise((resolve) => setTimeout(resolve, 500));
 
       const startIndex = currentPage.current * ITEMS_PER_PAGE;
       const endIndex = startIndex + ITEMS_PER_PAGE;
@@ -31,7 +31,7 @@ const useVirtualization = (initialData: ForAllProps[] = []) => {
       if (!newItems?.length) {
         setHasMore(false);
       } else {
-        setItems(prev => [...prev, ...newItems]);
+        setItems((prev) => [...prev, ...newItems]);
         currentPage.current += 1;
         setHasMore(endIndex < initialData?.length);
       }
@@ -42,7 +42,7 @@ const useVirtualization = (initialData: ForAllProps[] = []) => {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      entries => {
+      (entries) => {
         if (entries[0].isIntersecting && hasMore && !loading) {
           loadMoreItems();
         }
