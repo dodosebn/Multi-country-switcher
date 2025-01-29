@@ -5,17 +5,18 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import FirstStyle from '@/styles/FirstPage.module.scss';
 import { FaArrowLeftLong } from "react-icons/fa6";
+import { time } from 'console';
 
 const Main: React.FC = () => {
 
   const searchParams = useSearchParams();
   const countryName = searchParams.get("name");
   const capital = searchParams.get("capital") || "N/A";
+  const nativeName = searchParams.get('nativeName') || 'N/A';
   const borders = searchParams.get("borders")?.split(",") || [];
   const flag = searchParams.get("flag"); 
   const region = searchParams.get("region") || "Unknown";
   const population = searchParams.get("population") || "Unknown";
-  const area = searchParams.get("area") || "Unknown";
   const currency = searchParams.get("currency") || "Unknown";
   const topLevelDomain = searchParams.get("topLevelDomain") || "Unknown";
   const languages = searchParams.get("languages")?.split(",") || ["Unknown"];
@@ -45,10 +46,11 @@ const Main: React.FC = () => {
       <ul>
         
       <h1>{countryName}</h1>
-        <li>Native Native: <span>{capital}</span> </li>
+        <li>Capital: <span>{capital}</span> </li>
         <li>Population: <span> {population}</span></li>
         <li>Region: <span>{region}</span> </li>
-        <li>Area: <span>{area} km²</span> </li>
+        <li>Native Name: <span>{nativeName}</span></li>
+
  </ul>
  <ul className={FirstStyle.ul2}>
         <li>Currency:<span>{currency}</span> </li>

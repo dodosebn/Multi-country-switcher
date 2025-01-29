@@ -67,3 +67,17 @@ export interface ConstTopProps {
     darkMode: boolean;
     setDarkMode: React.Dispatch<React.SetStateAction<boolean>>;
   }
+  
+export type CountryProps = {
+    name: string;
+    population: number;
+    region: string;
+    capital: string;
+    flags: { png: string };
+    borders?: string[];
+    area?: number;
+    topLevelDomain?: string[];
+    currencies?: { name: string }[];
+    languages?: { name: string }[];
+  };
+  
