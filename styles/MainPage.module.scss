@@ -1,4 +1,4 @@
-$main-font: 'Nunito Sans', sans-serif;
+$main-font: "Nunito Sans", sans-serif;
 $DarkBg: hsl(207, 26%, 17%);
 $LightBg: hsl(0, 0%, 98%);
 $DarkBl: hsl(209, 23%, 22%);
@@ -16,7 +16,6 @@ body {
   padding: 0;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
-
 
 body.darkMode {
   --bg-color: #{$DarkBg};
@@ -80,20 +79,19 @@ body {
 
   margin-top: 3rem;
   border-radius: 7px;
-.firstDetails {
-  padding: 2.4rem;
-  
- p {
-  font-size: 1.3rem;
-}
+  .firstDetails {
+    padding: 2.4rem;
 
+    p {
+      font-size: 1.3rem;
+    }
+  }
 }
-}
-@media (min-width: 650px){
+@media (min-width: 650px) {
   .constTop {
     padding: 1rem 3rem;
   }
-  .constMode{
+  .constMode {
     padding-top: 1rem;
   }
   .bodyRule1 {
@@ -106,9 +104,9 @@ body {
     // display: grid;
     // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     // gap: 25px;
-
-  }.firstPage{
-    img{
+  }
+  .firstPage {
+    img {
       width: 17.5rem;
       height: 10rem;
     }
@@ -116,17 +114,16 @@ body {
       display: flex;
       flex-direction: column;
       flex-wrap: wrap;
-     p {
-      font-size: 0.96rem;
-    }
-   h1{
-    width: 100%;
-    font-size: 1rem;
-    flex-wrap: nowrap;
-    font-weight: bold;
-    width: 10rem;
-   } 
-    
+      p {
+        font-size: 0.96rem;
+      }
+      h1 {
+        width: 100%;
+        font-size: 1rem;
+        flex-wrap: nowrap;
+        font-weight: bold;
+        width: 10rem;
+      }
     }
   }
 }

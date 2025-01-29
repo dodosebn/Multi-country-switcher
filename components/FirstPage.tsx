@@ -3,8 +3,8 @@
 import React from "react";
 import { useRouter } from "next/navigation";
 import { FirstPageProps, ForAllProps } from "@/types";
-import MainStyle from "@/styles/MainPage.module.scss";
-import FirstStyle from '@/styles/FirstPage.module.scss';
+import MainStyle from '../styles/MainPage.module.scss';
+import FirstStyle from '../styles/FirstPage.module.scss';
 import { useVirtualization } from "@/components/Hooks";
 import { Loader2 } from "lucide-react";
 // import { CountryProps } from "@/types";
@@ -12,7 +12,9 @@ import { Loader2 } from "lucide-react";
 // Update FirstPageProps to expect jsonData to be of type Country[]
 const FirstPage: React.FC<FirstPageProps> = ({ setCountryData, jsonData }) => {
   const router = useRouter();
-  const { items, loading, hasMore, loadingRef } = useVirtualization(jsonData as ForAllProps[]);
+  const { items, loading, hasMore, loadingRef } = useVirtualization(
+    jsonData as ForAllProps[]
+  );
 
   const handleCountryClick = (country: ForAllProps) => {
     setCountryData(country);
@@ -20,14 +22,16 @@ const FirstPage: React.FC<FirstPageProps> = ({ setCountryData, jsonData }) => {
     const mainShows = new URLSearchParams({
       name: country.name,
       capital: country.capital || "N/A",
-      nativeName: country.nativeName || 'N/A',
+      nativeName: country.nativeName || "N/A",
       borders: country.borders?.join(",") || "None",
       flag: encodeURIComponent(country.flags.png),
       region: country.region || "Unknown",
       population: country.population?.toString() || "Unknown",
       topLevelDomain: country.topLevelDomain?.[0] || "Unknown",
       currency: country.currencies?.[0]?.name || "Unknown",
-      languages: country.languages?.map((lang: any) => lang.name).join(", ") || "Unknown",
+      languages:
+        country.languages?.map((lang: any) => lang.name).join(", ") ||
+        "Unknown",
     }).toString();
 
     router.push(`/Details?${mainShows}`);
@@ -59,7 +63,7 @@ const FirstPage: React.FC<FirstPageProps> = ({ setCountryData, jsonData }) => {
       <div ref={loadingRef} className={FirstStyle.LoadingCont}>
         {loading && (
           <div>
-            <Loader2 className={FirstStyle.Loader2}/>
+            <Loader2 className={FirstStyle.Loader2} />
             <p>Loading more Country....</p>
           </div>
         )}
