@@ -25,11 +25,11 @@ const ConstTop: React.FC<ConstTopProps> = ({ darkMode, setDarkMode }) => {
         <div>
           <h3>Where in the World?</h3>
         </div>
-        <div className={MainStyle.constMode}>
+        <div >
           {darkMode ? (
-            <CiLight fontSize={30} onClick={() => setDarkMode(false)} />
+            <CiLight fontSize={30} onClick={() => setDarkMode(false)} className={MainStyle.constMode}/>
           ) : (
-            <FaMoon fontSize={30} onClick={() => setDarkMode(true)} />
+            <FaMoon fontSize={30} onClick={() => setDarkMode(true)} className={MainStyle.constMode}/>
           )}
         </div>
       </div>

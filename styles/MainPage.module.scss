@@ -17,7 +17,7 @@ body {
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-// Define body styles for dark and light modes using CSS variables
+
 body.darkMode {
   --bg-color: #{$DarkBg};
   --text-color: #{$White};
@@ -94,7 +94,7 @@ body {
     padding: 1rem 3rem;
   }
   .constMode{
-    margin-top: 3rem;
+    padding-top: 1rem;
   }
   .bodyRule1 {
     margin: auto;
