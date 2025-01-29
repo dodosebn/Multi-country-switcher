@@ -19,13 +19,13 @@ body {
 
 // Define body styles for dark and light modes using CSS variables
 body.darkMode {
-  --bg-color: $DarkBg;
-  --text-color: $White;
+  --bg-color: #{$DarkBg};
+  --text-color: #{$White};
 }
 
 body.whiteMode {
-  --bg-color: $LightBg;
-  --text-color: $DarkBl;
+  --bg-color: #{$LightBg};
+  --text-color: #{$DarkBl};
 }
 
 body {
@@ -35,7 +35,6 @@ body {
 
 .bodyStuff {
   background-size: cover;
-  padding: 1rem;
   box-sizing: border-box;
 }
 
@@ -49,14 +48,85 @@ body {
   background-color: var(--bg-color);
   color: var(--text-color);
   @extend .bodyStuff;
+  padding: 1rem 2rem;
 }
 
 .constRule1 {
-  padding: 1.3rem;
   display: flex;
   justify-content: space-between;
 }
 
 .bodyRule1 {
-  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.inputText {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+
+.firstPage {
+  &.darkMode {
+    background-color: $DarkBg;
+  }
+
+  &.whiteMode {
+    background-color: $White;
+  }
+
+  margin-top: 3rem;
+  border-radius: 7px;
+.firstDetails {
+  padding: 2.4rem;
+  
+ p {
+  font-size: 1.3rem;
+}
+
+}
+}
+@media (min-width: 650px){
+  .constTop {
+    padding: 1rem 3rem;
+  }
+  .constMode{
+    margin-top: 3rem;
+  }
+  .bodyRule1 {
+    margin: auto;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem;
+    // width: 90%;
+    // display: grid;
+    // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    // gap: 25px;
+
+  }.firstPage{
+    img{
+      width: 17.5rem;
+      height: 10rem;
+    }
+    .firstDetails {
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+     p {
+      font-size: 0.96rem;
+    }
+   h1{
+    width: 100%;
+    font-size: 1rem;
+    flex-wrap: nowrap;
+    font-weight: bold;
+    width: 10rem;
+   } 
+    
+    }
+  }
 }

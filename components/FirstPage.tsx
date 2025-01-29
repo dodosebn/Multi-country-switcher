@@ -3,7 +3,7 @@
 import React from 'react';
 import { useRouter } from "next/navigation";
 import { FirstPageProps } from '@/types';
-import firstStyle from '../styles/FirstPage.module.scss'
+import MainStyle from '@/styles/MainPage.module.scss';
 const FirstPage: React.FC<FirstPageProps> = ({ setCountryData, jsonData }) => {
   const router = useRouter();
 
@@ -28,15 +28,17 @@ const FirstPage: React.FC<FirstPageProps> = ({ setCountryData, jsonData }) => {
   };
   
   return (
-    <div id="countryBody">
+    <div id="countryBody" className={MainStyle.bodyRule1}>
       {jsonData.map((item) => (
-        <div key={item.name} onClick={() => handleCountryClick(item)}>
-          <img src={item.flags.png} alt={`Flag of ${item.name}`} width={50} height={30} />
+        <div className={MainStyle.firstPage} key={item.name} onClick={() => handleCountryClick(item)}>
+          <img src={item.flags.png} alt={`Flag of ${item.name}`} />
+          <div className={MainStyle.firstDetails}>
           <h1>{item.name}</h1>
-          <p>{item.population.toLocaleString()}</p>
-          <p>{item.region}</p>
-          <p>{item.capital}</p>
-        </div>
+          <p>Population:<span>{item.population.toLocaleString()}</span></p>
+          <p>Region: <span>{item.region}</span></p>
+          <p>Capital: <span>{item.capital}</span></p>
+          </div>
+               </div>
       ))}
     </div>
   );

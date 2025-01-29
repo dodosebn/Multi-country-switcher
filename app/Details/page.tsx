@@ -3,8 +3,11 @@
 import React from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
+import FirstStyle from '@/styles/FirstPage.module.scss';
+import { FaArrowLeftLong } from "react-icons/fa6";
 
 const Main: React.FC = () => {
+
   const searchParams = useSearchParams();
   const countryName = searchParams.get("name");
   const capital = searchParams.get("capital") || "N/A";
@@ -22,26 +25,48 @@ const Main: React.FC = () => {
   }
 
   return (
-    <main>
-      <Link href="/">
-        <button>Back</button>
+    <><div className={FirstStyle.buttonBoss}>
+          <Link href="/" >
+          <button className={FirstStyle.buttonCont}>
+            <div>
+          <FaArrowLeftLong />
+          </div>
+       <div> Back</div>
+        </button>
       </Link>
-      <h1>{countryName}</h1>
+      </div>
+    <main className={FirstStyle.mainStyle}>
+      <div className={FirstStyle.sectionHolders}>
+      <section>
+      <img src={decodeURIComponent(flag)} alt={`Flag of ${countryName}`}  className={FirstStyle.countryImg}/>
+      </section>
+      <section className={FirstStyle.section2}>
+  
       <ul>
-        <li>Capital: {capital}</li>
-        <li>Borders: {borders.length > 0 && borders[0] !== "" ? borders.join(", ") : "No borders"}</li>
-        <li>Languages: {languages.join(", ")}</li>
-        <li>
-  <img src={decodeURIComponent(flag)} alt={`Flag of ${countryName}`} width={200} height={100} />
-</li>
-
-        <li>Region: {region}</li>
-        <li>Population: {population}</li>
-        <li>Area: {area} km²</li>
-        <li>Currency: {currency}</li>
-        <li>Top-Level Domain: {topLevelDomain}</li>
+        
+      <h1>{countryName}</h1>
+        <li>Native Native: <span>{capital}</span> </li>
+        <li>Population: <span> {population}</span></li>
+        <li>Region: <span>{region}</span> </li>
+        <li>Area: <span>{area} km²</span> </li>
+ </ul>
+ <ul className={FirstStyle.ul2}>
+        <li>Currency:<span>{currency}</span> </li>
+        <li>Top-Level Domain:<span> {topLevelDomain}</span> </li>
+        <li>Languages:<span>{languages.join(", ")}</span> </li>
       </ul>
+      </section>
+      </div>
+
+      <div className={FirstStyle.borderCont}>
+        <h3>Border Countries:</h3>
+      <section> {borders.length > 0 && borders[0] !== "" ? borders.map((bord, index) => (
+  
+        <button key={index} >{bord}</button>
+       
+      )) : "No borders"}</section></div>
     </main>
+    </>
   );
 };
 
