@@ -10,7 +10,6 @@ import { useVirtualization } from "@/components/Hooks";
 import { Loader2 } from "lucide-react";
 // import { CountryProps } from "@/types";
 
-// Update FirstPageProps to expect jsonData to be of type Country[]
 const FirstPage: React.FC<FirstPageProps> = ({ setCountryData, jsonData }) => {
   const router = useRouter();
   const { items, loading, hasMore, loadingRef } = useVirtualization(

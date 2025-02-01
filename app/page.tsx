@@ -1,10 +1,9 @@
 "use client";
-import { HomePage, ConstTop } from "@/components";
+import { HomePage} from "@/components";
 import Data from "@/data.json";
 import { ForAllProps } from "@/types";
 import { useState } from "react";
 import MainStyle from "../styles/MainPage.module.scss";
-import "../styles/global.scss"; 
 const jsonData: ForAllProps[] = Data as ForAllProps[];
 
 export default function Home() {
