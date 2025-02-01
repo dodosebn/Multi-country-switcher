@@ -1,11 +1,10 @@
 "use client";
 
-import React from "react";
+import React, { Suspense } from "react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import FirstStyle from "../../styles/FirstPage.module.scss";
 import { FaArrowLeftLong } from "react-icons/fa6";
-// import { time } from 'console';
 
 const Main: React.FC = () => {
   const searchParams = useSearchParams();
@@ -25,7 +24,7 @@ const Main: React.FC = () => {
   }
 
   return (
-    <>
+    <Suspense fallback={<div>Loading...</div>}>
       <div className={FirstStyle.buttonBoss}>
         <Link href="/">
           <button className={FirstStyle.buttonCont}>
@@ -39,13 +38,11 @@ const Main: React.FC = () => {
       <main className={FirstStyle.mainStyle}>
         <div className={FirstStyle.sectionHolders}>
           <section>
-          {/* // ./app/Details/page.tsx */}
-<img
-  src={flag ? decodeURIComponent(flag) : 'default-image-url'}
-  alt={`Flag of ${countryName}`}
-  className={FirstStyle.countryImg}
-/>
-
+            <img
+              src={flag ? decodeURIComponent(flag) : 'default-image-url'} // Handle null case for flag
+              alt={`Flag of ${countryName}`}
+              className={FirstStyle.countryImg}
+            />
           </section>
           <section className={FirstStyle.section2}>
             <ul>
@@ -89,7 +86,7 @@ const Main: React.FC = () => {
           </section>
         </div>
       </main>
-    </>
+    </Suspense>
   );
 };
 
